@@ -1,0 +1,17 @@
+#db.sqlite
+db.sqlite3
+
+#migrations
+blog/migrations
+
+# env for postgresSql user / password / DB name
+#.env
+
+#Covers
+uploadPic/
+
+#env/
+env/
+
+#vscode config
+.vscode

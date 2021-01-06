@@ -1,0 +1,58 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block main %}
+
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('{% static 'blog/img/home-bg.jpg' %}')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <p class="title-center">وبلاگ</p>
+            <span class="subheading"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        {% for article in category.articles.published %}
+        <div class="post-preview">
+          <a href="{% url 'blog:detail' article.slug %}">
+            <p class="post-title">
+              {{article.title}}
+            </p>
+            <p class="post-subtitle">
+              {{article.desc|truncatewords:20}}
+            </p>
+          </a>
+          <p class="post-meta">نوشته شده توسط
+            <a href="#">ادمین</a>
+            {{article.jpublish}}</p>
+            <div>
+              {% for cat in article.category_published.all %}
+
+              <a href="#">#{{ cat.title }}</a>
+
+              {% endfor %}
+            </div>
+        </div>
+        <hr>
+        {% endfor %}
+        
+        <!-- Pager -->
+        <div class="clearfix pager-botton">
+          <a class="btn btn-primary float-right" href="#">پست های قدیمی &larr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
