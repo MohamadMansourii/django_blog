@@ -7,8 +7,6 @@ Then create **docker network** and **volumes** as below.
 
 ```sh
 $ docker volume create blogProject_postgresql
-```
-```sh
 $ docker network create blogProject_network
 ```
 Now run postgresql with **docker-compose**.
@@ -18,22 +16,22 @@ $ docker-compose up -d
 Before run project, we need to import the following commands in Terminal
 > (This command create table of database in postgresql)
 
-```python
+```sh
 python manage.py makemigrations
 ```
 and
-```python
+```sh
 python manage.py migrate
 ```
 
 Run Project with this Command:
 
-```python
+```sh
 ./manage.py runserver
 ```
 
 Or
 
-```python
+```sh
 python manage.py runserver
 ```
