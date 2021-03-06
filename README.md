@@ -15,6 +15,16 @@ Now run postgresql with **docker-compose**.
 ```sh
 $ docker-compose up -d
 ```
+Before Run project, We need to import the following commands in Terminal
+> (This command create table of database in postgresql)
+
+```python
+python manage.py makemigrations
+```
+and
+```python
+python manage.py migrate
+```
 
 Run Project with this Command:
 
